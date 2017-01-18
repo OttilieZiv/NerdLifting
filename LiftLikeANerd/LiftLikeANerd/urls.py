@@ -38,6 +38,9 @@ urlpatterns = [
         },
         name='logout'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^programmes$', app.views.ProgrammeList.as_view(), name='prog_list'),
+    url(r'^programmes/new$', app.views.ProgrammeCreate.as_view(), name='prog_new'),
+    url(r'^programmes/(?P<pk>\d+)/edit$', app.views.ProgrammeUpdate.as_view(), name='prog_edit'),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

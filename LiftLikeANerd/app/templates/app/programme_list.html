@@ -1,0 +1,18 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div>
+    <p>Current programmes:</p>
+	<ul>
+		{% for prog in prog_list %}
+			<li><a href="{% url 'prog_edit' prog.id %}">{{ prog.name }}</a></li>
+		{% empty %}
+			<p>None! Get on with making some!</p>
+		{% endfor %}
+	</ul>
+	
+	<p><a class="btn btn-default" href="{% url 'prog_new' %}">New &raquo;</a></p>
+</div>
+
+{% endblock %}
